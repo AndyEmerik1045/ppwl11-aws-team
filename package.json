@@ -1,0 +1,12 @@
+{
+  "name": "monorepo",
+  "private": true,
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev": "bun run --filter '*' dev",
+    "start": "bun run --env-file=apps/backend/.env.production --filter '*' start",
+    "dev:frontend": "bun run --filter frontend dev",
+    "dev:backend": "bun run --filter backend dev",
+    "build": "bun run --filter '*' build"
+  }
+}

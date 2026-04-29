@@ -1,0 +1,27 @@
+name: monorepo
+
+services:
+  backend:
+    build:
+      context: .                        # root = context supaya bisa akses packages/shared
+      dockerfile: apps/backend/Dockerfile
+      network: host
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    restart: unless-stopped
+
+  frontend:
+    build:
+      context: .
+      dockerfile: apps/frontend/Dockerfile
+      network: host
+    ports:
+      - "5173:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  db_data:
