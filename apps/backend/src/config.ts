@@ -7,8 +7,8 @@ const SSM_PARAMS = [
   "/asdos/GOOGLE_CLIENT_SECRET",
   "/asdos/GOOGLE_REDIRECT_URI",
   "/asdos/FRONTEND_URL",
-  "/asdos/JWT_SECRET",
   "/monorepo/DATABASE_URL",
+  "/monorepo/JWT_SECRET",
   "/monorepo/API_KEY",
 ];
 
@@ -26,7 +26,10 @@ export const loadConfig = async () => {
     const v = param.Value;
     if (!n || !v) return;
     const key = n.split("/").pop();
-    if (key) process.env[key] = v;
+    // Jangan timpa env vars yang sudah ada
+    if (key && !process.env[key]) {
+      process.env[key] = v;
+    }
   });
   isLoaded = true;
 };

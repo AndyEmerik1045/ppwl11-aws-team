@@ -22,7 +22,8 @@ export default defineConfig(({ mode }) => {
     // Sekarang Anda bisa menggunakan variabel env di sini jika butuh, 
     // misalnya untuk mengganti port secara dinamis:
     build: {
-      sourcemap: true
+      sourcemap: true,
+      target: 'es2022'
     },
     plugins: [react(), tailwindcss()],
     resolve: {

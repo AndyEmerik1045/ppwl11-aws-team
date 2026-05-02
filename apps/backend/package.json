@@ -5,7 +5,6 @@
   "type": "module",
   "scripts": {
     "dev": "bun run --watch src/server.ts",
-    "dev:turso": "bun --env-file=.env.production src/server.ts",
     "build": "prisma generate && tsdown",
     "postinstall": "prisma generate",
     "start": "bun --env-file=.env.production dist/index.mjs",

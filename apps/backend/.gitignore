@@ -42,3 +42,6 @@ report.[0-9]_.[0-9]_.[0-9]_.[0-9]_.json
 .env.development
 .env.production
 >>>>>>> 230e25e (feat: implement Vercel deployment support, secure cookie configuration, and API key authentication for backend and frontend services.)
+dist-lambda/
+lambda-backend.zip
+cert/

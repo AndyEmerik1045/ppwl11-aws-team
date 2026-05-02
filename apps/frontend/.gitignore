@@ -25,3 +25,5 @@ dist-ssr
 
 .env
 .env.production
+awscliv2.zip
+aws/
